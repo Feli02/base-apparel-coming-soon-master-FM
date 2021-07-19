@@ -1,0 +1,225 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --gradient-white: linear-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --gradient-pink: linear-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    --gradient-hover-btn: linear-gradient(#fdd8d8, #eba2a2);
+}
+
+html, body{
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--gradient-white);
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#main-header{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 25px;
+}
+
+.logo-header{
+    width: 35%;
+}
+
+.img-container, .img-mobile, .img-woman{
+    width: 100%;
+    height: auto;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 35px;
+    flex-grow: 1;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 10px;
+    color: var(--dark-grayish-red);
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.title .title-top{
+    font-weight: 300;
+}
+
+.title-top, .main-info{
+    color: var(--desaturated-red)
+}
+
+.main-info{
+    text-align: center;
+    line-height: 160%;
+}
+
+.main-form{
+    width: 100%;
+    height: 80px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.error-icon, .error-txt{
+    display: none;
+}
+
+.btn, .email{
+    border: none;
+    outline: none;
+}
+
+.email{
+    border: solid 1px var(--desaturated-red);
+    height: 70%;
+    padding-left: 20px;
+    border-radius: 45px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.email::placeholder {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+.btn{
+    background: var(--gradient-pink);
+    height: 70%;
+    border-radius: 30px;
+    width: 70px;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s;
+    position: absolute;
+}
+
+.error-icon-show {
+    display: block;
+    position: absolute;
+    right: 30%;
+    bottom: 50%;
+}
+
+.error-txt-show {
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: var(--soft-red);
+    font-weight: 300;
+}
+
+.email-add-border{
+    border: solid var(--soft-red);
+}
+
+.btn:hover{
+    background: var(--gradient-hover-btn);
+    border-radius: 40px;
+    width: 80px;
+    transition: all 0.3s;
+}
+
+.attribution p{
+    color: #3a015c;
+    line-height: 30px;
+}
+
+
+.attribution a{
+    text-decoration: underline wavy #00b4d8;
+    color: #00b4d8;
+    transition: all 0.3s
+}
+
+.attribution a:hover{
+    transition: all, 0.3s ;
+    color: #f72585;
+    text-decoration: underline wavy #f72585;
+}
+
+#footer{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+.img-woman-desktop{
+    display: none;
+}
+
+@media (min-width: 1100px){
+    .title, .main-info{
+        text-align: left;
+    }
+    .main-info{
+        font-size: 18px;
+    }
+    .title{
+        font-size: 4rem;
+    }
+    .logo-header {
+        width: 35%;
+    }
+    .img-woman-desktop{
+        display: block;
+    }
+    .img-container, .img-mobile, .img-woman-desktop {
+        width: 100%;
+        height: auto;
+    }
+    .img-woman{
+        display: none;
+    }
+    #wrapper {
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        grid-template-rows: 0.2fr 0.8fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        min-height: 0;
+        height: fit-content;
+    }
+    .main-form, .main-info{
+        width: 80%;
+    }
+        
+    #main-header { grid-area: 1 / 1 / 2 / 2; padding: 40px 0 25px 25%;}
+    .main-content { grid-area: 2 / 1 / 3 / 2; align-items: flex-start; padding: 50px 0 0 25%;}
+    .img-container { grid-area: 1 / 2 / 3 / 3; }
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+    #wrapper { grid-area: 1 / 1 / 2 / 2; }
+    #footer { grid-area: 2 / 1 / 3 / 2; }
+
+}

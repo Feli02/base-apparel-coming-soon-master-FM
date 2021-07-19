@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+</head>
+<body>
+
+  <div id="wrapper">
+    <header id="main-header">
+      <img src="./images/logo.svg" alt="logo" class="logo-header">
+    </header>
+
+    <picture class="img-container">
+      <source srcset="./images/hero-mobile.jpg" class="img-mobile" media="(max-width: 700px)">
+      <source srcset="./images/hero-desktop.jpg" class="img-desktop" media="(min-width: 700px)">
+      <img src="./images/hero-mobile.jpg" alt="img-women" class="img-woman">
+      <img src="./images/hero-desktop.jpg" alt="" class="img-woman-desktop">
+    </picture>
+
+    <main class="main-content">
+      <h1 class="title"><span class="title-top">We're</span> <br>
+        coming <br>
+        soon</h1>
+      <p class="main-info">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p> 
+
+      <form action="#" class="main-form">
+        <input type="email" name="email" id="email" class="email" placeholder="Email Address">
+        <img src="./images/icon-error.svg" alt="error" class="error-icon" id="icon-error">
+        <button type="submit" class="btn" id="button-submit" onblur="validation()"><img src="./images/icon-arrow.svg" alt="arrow"></button>
+        <p class="error-txt" id="text-err">Please provide a valid email</p>
+      </form>
+    </main>
+    <script src="validations.js"></script>
+  </div>
+  <footer id="footer">
+    <div class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> <br>
+        Coded by <a href="https://www.frontendmentor.io/profile/Feli02" target="_blank">Felipe Berraz</a></p>
+    </div>
+  </footer>
+  
+ 
+</body>
+</html>
